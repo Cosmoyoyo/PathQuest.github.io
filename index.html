@@ -15,6 +15,7 @@
             background: #f8f9fa;
             color: #333;
             line-height: 1.6;
+            overflow: hidden; /* 防止滚动条出现 */
         }
 
         /* 登录容器（参考chat-container样式） */
@@ -29,16 +30,18 @@
 
         @media (max-width: 500px) {
             .login-container {
-                width: 90%;    /* 小屏幕时占满90%宽度 */
-                margin: 5vh auto;
-                padding: 25px; /* 减少移动端内边距 */
+                width: 85%;    /* 原90% → 调小两侧留白 */
+                margin: 10vh auto; /* 调整垂直边距，避免内容超出视口 */
+                padding: 20px; /* 进一步缩小内边距 */
+                max-height: 80vh; /* 限制容器最大高度为视口80% */
+                overflow-y: auto; /* 仅容器内部内容过长时滚动 */
             }
             .form-input {
-                padding: 10px;  /* 微调内边距更紧凑 */
+                padding: 10px;  /* 保持输入框紧凑 */
                 font-size: 0.9em;
             }
             .login-btn {
-                padding: 10px;      /* 按钮内边距同步缩小 */
+                padding: 10px;
                 font-size: 0.9em;
             }
         }
