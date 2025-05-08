@@ -15,6 +15,179 @@
             background: #f8f9fa;
             color: #333;
             line-height: 1.6;
+            /* 默认字体大小（移动端） */
+            font-size: 15px;
+        }
+
+        /* 登录容器（参考chat-container样式） */
+        .login-container {
+            max-width: 400px;
+            margin: 150px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 45px;
+        }
+
+        @media (max-width: 500px) {
+            .login-container {
+                width: 85%;    /* 原90% → 调小两侧留白 */
+                margin: 10vh auto; /* 调整垂直边距，避免内容超出视口 */
+                padding: 20px; /* 进一步缩小内边距 */
+                max-height: 80vh; /* 限制容器最大高度为视口80% */
+                overflow-y: auto; /* 仅容器内部内容过长时滚动 */
+            }
+            .form-input {
+                padding: 10px;  /* 保持输入框紧凑 */
+                font-size: 0.9em;
+            }
+            .login-btn {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* logo和产品名（参考nav中的logo样式） */
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .login-logo {
+            font-weight: 700;
+            font-size: 2em;  /* 原2em → 基于body字体的倍数 */
+            color: #3A5199;
+        }
+        .product-name {
+            font-size: 1.2em;  /* 原1.2em → 基于body字体的倍数 */
+            color: #555;
+            margin-top: 8px;
+        }
+
+        /* 输入框组 */
+        .form-group {
+            margin-bottom: 20px;
+        }
+         .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+            /* 默认字体大小（移动端） */
+            font-size: 1em;
+        }
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            /* 默认字体大小（移动端） */
+            font-size: 1em;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #3A5199;
+            box-shadow: 0 0 0 2px rgba(58, 81, 153, 0.1);
+        }
+
+        /* 登录按钮（参考mic-btn样式） */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #3A5199;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            /* 默认字体大小（移动端） */
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+         @media (min-width: 768px) {
+            body {
+                /* 电脑端全局字体放大10% */
+                font-size: 17px;
+            }
+            .login-logo {
+                /* logo字体额外放大 */
+                font-size: 2.2em;
+            }
+            .form-input, .login-btn {
+                /* 输入框/按钮字体同步放大 */
+                font-size: 1.05em;
+            }
+        }
+
+        .login-btn:hover {
+            background: #2c3d73;
+            box-shadow: 0 4px 15px rgba(58, 81, 153, 0.3);
+        }
+
+        /* 注册链接 */
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+            color: #555;
+        }
+        .register-link a {
+            color: #3A5199;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="login-logo">智跃</div>
+            <div class="product-name">英语学习平台</div>
+        </div>
+
+        <form class="login-form">
+            <div class="form-group">
+                <label class="form-label" for="username">账户</label>
+                <input type="text" id="username" class="form-input" placeholder="请输入账户">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="password">密码</label>
+                <input type="password" id="password" class="form-input" placeholder="请输入密码">
+            </div>
+
+            <button type="submit" class="login-btn">登录</button>
+
+            <div class="register-link">
+                还没有账户？<a href="#">注册用户</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>智跃登录</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 复用已有字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 复用基础样式 */
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
             overflow: hidden; /* 防止滚动条出现 */
         }
 
