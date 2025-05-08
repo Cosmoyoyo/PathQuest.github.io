@@ -28,12 +28,22 @@
         }
 
         @media (max-width: 500px) {
-        .login-container {
-            width: 90%;    /* 小屏幕时占满90%宽度 */
-            margin: 5vh auto;
-            padding: 25px; /* 减少移动端内边距 */
+            .login-container {
+                width: 80%;         /* 原90% → 缩小20%宽度 */
+                margin: 15vh auto;  /* 原5vh → 调整到屏幕上1/3位置（15vh约为屏幕高度15%） */
+                padding: 20px;      /* 原25px → 进一步缩小内边距 */
             }
-        }
+    
+            /* 输入框/按钮等子元素会自动适配容器缩小 */
+            .form-input {
+                padding: 10px;      /* 输入框内边距微调（更紧凑） */
+                font-size: 0.9em;   /* 文字适当缩小 */
+            }
+            .login-btn {
+                padding: 10px;      /* 按钮内边距同步缩小 */
+                font-size: 0.9em;
+            }
+            }
 
         /* logo和产品名（参考nav中的logo样式） */
         .login-header {
